@@ -16,12 +16,12 @@ VISUALIZACIONES INCLUIDAS:
 
 ESTRUCTURA DEL PROYECTO:
 
-- data/: Carpeta con los archivos de datos ya procesados (formatos CSV y Parquet).
-  Nota: El conjunto de datos limpio utilizado en este proyecto fue generado en una práctica anterior. Aquí se incluye directamente la versión final procesada, preparada para las visualizaciones. No se repite el proceso completo de limpieza para evitar redundancias.
+- data/: Carpeta con los archivos de datos ya procesados (formato CSV).
+  Nota: El conjunto de datos ha sido reducido a las columnas necesarias para generar las visualizaciones, con el fin de optimizar su tamaño. No se incluye el proceso completo de limpieza para evitar redundancias.
 
-- notebooks/: Notebooks con el código de limpieza mínima, cálculo de métricas y visualizaciones (Jupyter).
+- notebooks/: Notebook con el código de limpieza mínima, cálculo de métricas y visualizaciones (Jupyter).
 
-- assets/: Recursos gráficos, capturas y material de apoyo para el vídeo o documentación (opcional).
+- docs/: Carpeta donde se generan las visualizaciones exportadas (formato PNG y HTML).
 
 - README.txt: Este archivo, con información general del proyecto.
 
@@ -32,7 +32,7 @@ INSTRUCCIONES DE EJECUCIÓN:
 1. Clonar el repositorio en local.
 2. Crear un entorno virtual y activarlo.
 3. Instalar dependencias con: pip install -r requirements.txt
-4. Abrir el notebook principal: notebooks/visualizaciones.ipynb
+4. Abrir el notebook principal: notebooks/visualizaciones_definitivo.ipynb
 5. Ejecutar las celdas para generar las visualizaciones.
 
 TECNOLOGÍAS EMPLEADAS:
@@ -40,8 +40,9 @@ TECNOLOGÍAS EMPLEADAS:
 - Python 3.10 o superior
 - Pandas, NumPy
 - Altair (para visualización interactiva)
+- Matplotlib, Seaborn
 - Jupyter Notebook
-- YouTube Data API v3 (para enriquecer el conjunto de datos)
+- YouTube Data API v3 (para enriquecer el conjunto de datos original)
 
 VÍDEO EXPLICATIVO:
 (Enlace al vídeo cuando esté disponible)
@@ -55,45 +56,22 @@ El código fuente de este proyecto está disponible bajo la licencia MIT (ver ar
 
 Los datos utilizados se basan en una versión modificada del siguiente conjunto de datos:
 
-"YouTube Trending Videos Dataset", disponible en: https://www.kaggle.com/datasets/thedevastator/youtube-trending-videos-dataset  
-Autor original: thedevastator (Kaggle)  
-Se ha enriquecido y limpiado mediante procesos propios y el uso de la API de YouTube.  
+"YouTube Trending Videos Dataset", disponible en:
+https://www.kaggle.com/datasets/thedevastator/youtube-trending-videos-dataset
+
+Autor original: thedevastator (Kaggle)
+Se ha enriquecido y limpiado mediante procesos propios y el uso de la API de YouTube.
 Esta versión no contiene datos personales ni sensibles y se distribuye exclusivamente con fines educativos. Se recomienda dar crédito al autor original si se reutiliza.
 
-DICCIONARIO DE VARIABLES:
+DICCIONARIO DE VARIABLES (versión reducida):
 
-index: Índice numérico del registro en el dataset.
 video_id: Identificador único del vídeo en YouTube.
-trending_date: Fecha en la que el vídeo apareció por primera vez en la lista de Tendencias.
 title: Título del vídeo.
-channel_title: Nombre del canal que publicó el vídeo.
-category_id: Código numérico de la categoría del vídeo (según el API de YouTube).
-publish_date: Fecha exacta en la que se publicó el vídeo.
-time_frame: Franja horaria local en la que se publicó el vídeo (por ejemplo, "17:00 to 17:59").
-published_day_of_week: Día de la semana en que se publicó el vídeo.
-publish_country: País donde fue publicado el vídeo (según la edición nacional de YouTube).
-tags: Lista de etiquetas (tags) asociadas al vídeo.
-views: Número total de visualizaciones acumuladas hasta la fecha de entrada en Tendencias.
-likes: Número total de "me gusta" hasta la fecha de entrada en Tendencias.
-dislikes: Número total de "no me gusta" (antes de su retirada por parte de YouTube).
-comment_count: Número de comentarios visibles en el vídeo.
-comments_disabled: Indica si los comentarios están desactivados (True/False).
-ratings_disabled: Indica si la visualización de likes/dislikes está desactivada (True/False).
-video_error_or_removed: Indica si el vídeo fue eliminado o dio error al recuperar los datos (True/False).
-channel_id: Identificador único del canal.
-category_id_api: Categoría del vídeo según el API de YouTube (puede contener valores nulos).
-channel_createdAt: Fecha de creación del canal.
-channel_subscribers: Número de suscriptores del canal en el momento de publicación del vídeo.
-category_name: Nombre de la categoría del vídeo (ej. "Music", "Entertainment", etc.).
-iso3: Código ISO 3166-1 alfa-3 del país (ej. "USA", "GBR").
-Country: Nombre del país de publicación (ej. "United States").
-gii: Índice de desigualdad de género (Gender Inequality Index) del país.
-population_total: Población total estimada del país.
-gdp_per_capita: PIB per cápita del país (en USD).
-likes_ratio: Proporción de likes sobre el total de visualizaciones.
-engagement_rate: Medida de interacción, calculada como (likes + comentarios) dividido por visualizaciones.
-time_to_trend_hours: Tiempo (en horas) que tardó el vídeo en entrar en Tendencias desde su publicación.
-channel_age_days: Edad del canal en días en el momento de publicación del vídeo.
-subs_normalized_views: Número de visualizaciones del vídeo normalizado por el número de suscriptores del canal.
-views_per_million_pop: Visualizaciones del vídeo por cada millón de habitantes del país.
-gii_bucket: Clasificación del país según su GII en rangos cualitativos (por ejemplo, "Muy baja").
+channel_title: Nombre del canal.
+category_name: Categoría del vídeo (ej. "Music", "Entertainment").
+time_frame: Franja horaria local en la que se publicó el vídeo.
+views: Número de visualizaciones.
+channel_subscribers: Suscriptores del canal en el momento de publicación.
+time_to_trend_hours: Tiempo (en horas) que tardó el vídeo en entrar en Tendencias.
+channel_age_days: Antigüedad del canal en días.
+publish_date: Fecha de publicación del vídeo.
