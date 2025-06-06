@@ -19,7 +19,7 @@ Este proyecto de visualización interactiva analiza los factores que influyen en
 
 - **data/**: Carpeta con el archivo de datos reducido (`youtube_master_dataset.csv`). Solo incluye las columnas necesarias para las visualizaciones.  
 - **docs/**: Visualizaciones exportadas en formato HTML y PNG.  
-- **notebooks/**: Notebook principal (`visualizaciones_definitivo.ipynb`) con el código completo de generación de visualizaciones.  
+- **notebooks/**: Notebook principal (`notebook.ipynb`) con el código completo de generación de visualizaciones.  
 - **README.md**: Este archivo.  
 - **requirements.txt**: Listado de dependencias necesarias para reproducir el entorno.
 
@@ -28,7 +28,7 @@ Este proyecto de visualización interactiva analiza los factores que influyen en
 1. Clonar el repositorio en local.  
 2. Crear un entorno virtual y activarlo.  
 3. Instalar dependencias con: `pip install -r requirements.txt`  
-4. Abrir el notebook principal: `notebooks/visualizaciones_definitivo.ipynb`  
+4. Abrir el notebook principal: `visualizaciones.ipynb`  
 5. Ejecutar las celdas para generar las visualizaciones (opcional si ya están en `/docs`).
 
 ## TECNOLOGÍAS EMPLEADAS
@@ -43,9 +43,9 @@ Este proyecto de visualización interactiva analiza los factores que influyen en
 
 (Enlace al vídeo cuando esté disponible)
 
-## PUBLICACIÓN INTERACTIVA (opcional)
+## PUBLICACIÓN INTERACTIVA
 
-(Enlace a Observable o Tableau Public, si se publica)
+https://hernandezlopezai.github.io/youtube-viralidad-visualizaciones/
 
 ## LICENCIA
 
