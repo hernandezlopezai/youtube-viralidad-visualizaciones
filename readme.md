@@ -39,10 +39,6 @@ Este proyecto de visualización interactiva analiza los factores que influyen en
 - Matplotlib, Seaborn  
 - Jupyter Notebook
 
-## VÍDEO EXPLICATIVO
-
-(Enlace al vídeo cuando esté disponible)
-
 ## PUBLICACIÓN INTERACTIVA
 
 https://hernandezlopezai.github.io/youtube-viralidad-visualizaciones/
